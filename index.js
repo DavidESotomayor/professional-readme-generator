@@ -1,5 +1,5 @@
 const inquirer = require('inquirer');
-// const fs = require('fs');
+const fs = require('fs');
 
 inquirer
   .prompt([
@@ -47,10 +47,49 @@ inquirer
         type: 'input',
         name: 'email',
         message: 'What is your email so that others may reach you?'
+    },
+    {
+      type: 'input',
+      name: 'first_last_name',
+      message: 'What is your first and last name?'
     }
   ])
   .then(answers => {
     console.log(answers);
+
+    const readme = `# ${answers.title}
+    
+    ## Table of Contents
+    
+    ### Description
+    ${answers.description}
+    
+    ### Installation 
+    ${answers.installation}
+
+    ### Usage
+    ${answers.usage}
+
+    ### Contributions
+    ${answers.contributions}
+
+    ### Test Instructions
+    ${answers.test_instructions}
+
+    #### License
+    ${answers.license}
+    
+    #### Questions
+    ${answers.github_username}
+    ${answers.email}
+
+    Copyright &copy; ${answers.first_last_name}`
+
+    fs.writeFile('message.txt', readme, (err) => {
+      if (err) throw err;
+      console.log('The file has been saved!');
+});
+
   })
   .catch(error => {
     if(error.isTtyError) {
