@@ -8,7 +8,7 @@ const writeReadme = (answers, licenseType) => {
     const { shield, link } = licenseType[answers.license]
     const readme = generateMarkdown(answers, link, shield)
 
-    fs.writeFile('exampleREADME.md', readme, (err) => {
+    fs.writeFile('README.md', readme, (err) => {
         if (err) throw err;
         console.log('The file has been saved!');
     });
