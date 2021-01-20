@@ -1,7 +1,7 @@
 # Professtional README Generator <p style="float: right;"><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-blue.svg"></a></p>
     
 ## Description
-This repository houses the program of a _**Professional Readme Generator**_ which was created using Node. The program prompts the user with questions in the terminal and stores the respones inputted.  These responses are then used to create a new readme.
+This repository houses the program of a _**Professional Readme Generator**_ which was created using Node and the Inquirer dependency. The program prompts the user with questions in the terminal and stores the respones inputted.  These responses are then used to create a new readme.
     
 ## Table of Contents
 * [Installation](#installation)
